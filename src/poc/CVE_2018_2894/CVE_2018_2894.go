@@ -1,6 +1,7 @@
 package CVE_2018_2894
 
 import (
+	"config"
 	"fmt"
 	"net/http"
 )
@@ -15,7 +16,7 @@ func islive(u string, port string) int {
 	}
 	url := "http://" + u + ":" + port + "/ws_utc/resources/setting/options/general"
 	request, err := http.NewRequest("GET", url, nil)
-	request.Header.Set("User-Agent", "ceshi/0.0.1")
+	request.Header.Set("User-Agent", config.Fakeua())
 	if err != nil {
 		return -1
 	}

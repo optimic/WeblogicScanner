@@ -18,6 +18,7 @@ import (
 	"poc/CVE_2018_2894"
 	"poc/CVE_2019_2725"
 	"poc/CVE_2019_2729"
+	"poc/Console"
 )
 
 /*func islive(u string, port string) int {
@@ -56,6 +57,7 @@ func main() {
 	//	fmt.Printf("[-] The target Weblogic UDDI module default path does not exist!")
 	//}
 
+	Console.Run(url, port)
 	CVE_2014_4210.Run(url, port)
 	CVE_2016_0638.Run(url, port)
 	CVE_2016_3510.Run(url, port)
