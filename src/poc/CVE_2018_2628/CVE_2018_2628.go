@@ -54,13 +54,15 @@ func sendEvilObjData(conn net.Conn, data string) []byte {
 	conn.Write(payload2)
 	var res []byte
 	buf := make([]byte, 4096)
-	for {
+	count := 0
+	for count < 10 {
 		n, err := conn.Read(buf)
 		if err != nil {
 			break
 		}
 		res = append(res, buf[:n]...)
 		time.Sleep(100 * time.Millisecond)
+		count += 1
 	}
 	return res
 }
