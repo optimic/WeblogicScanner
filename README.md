@@ -1,6 +1,6 @@
 # WeblogicScanner
 
-该项目是根据 [@RabbitMask](https://github.com/rabbitmask) 大佬的 [WeblogicScan](https://github.com/rabbitmask/WeblogicScan) 项目由Python改为Golang重新编写而来，源项目地址：https://github.com/rabbitmask/WeblogicScan
+该项目是根据 [@RabbitMask](https://github.com/rabbitmask) 大佬的 [WeblogicScan](https://github.com/rabbitmask/WeblogicScan) 项目该写而来，源项目地址：https://github.com/rabbitmask/WeblogicScan
 
 ### Usage
 

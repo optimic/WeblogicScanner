@@ -18,6 +18,7 @@ import (
 	"poc/CVE_2018_2894"
 	"poc/CVE_2019_2725"
 	"poc/CVE_2019_2729"
+	"poc/CVE_2019_2890"
 	"poc/Console"
 )
 
@@ -69,5 +70,6 @@ func main() {
 	CVE_2018_2894.Run(url, port)
 	CVE_2019_2725.Run(url, port)
 	CVE_2019_2729.Run(url, port)
+	CVE_2019_2890.Run(url, port)
 
 }
