@@ -43,7 +43,7 @@ func Fakeua() string {
 		"Openwave/ UCWEB7.0.2.37/28/999",
 		"Mozilla/4.0 (compatible; MSIE 6.0; ) Opera/UCWEB7.0.2.37/28/999"}
 	rand.Seed(time.Now().UnixNano())
-	ua := user_agent[rand.Intn(len(user_agent)+1)]
+	ua := user_agent[rand.Intn(len(user_agent))]
 	//ua := browser.Random()
 	//fmt.Println(ua)
 	return ua
